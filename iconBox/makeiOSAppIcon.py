@@ -24,7 +24,7 @@ t = ('20@2x',
      )
 
 imgpath = sysargs[1]
-dirpath = os.path.split(imgpath)[0] + '/pyappicons'
+dirpath = os.path.join(os.path.split(imgpath)[0], 'pyappicons')
 
 # 自动生成ios所需要的图片
 def getsize(str):
@@ -45,7 +45,7 @@ try:
             newImage = resize_image(originimg, size)
             if not os.path.isdir(dirpath):
                 os.mkdir(dirpath, 0o777)
-            newImage.save(dirpath + '/AppIcon' + t[idx] + '.png')
+            newImage.save(os.path.join(dirpath, 'AppIcon' + t[idx] + '.png'))
 
 except IOError as e:
     print(f'cannot create image {e}')

@@ -1,4 +1,5 @@
 # iOSIconBox
+注意: 需要先安装pillow包
 1.打开命令行工具, 输入python3
 
 2.然后把makeiOSAppIcon.py文件拖到命令行工具内
