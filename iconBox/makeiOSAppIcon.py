@@ -40,7 +40,7 @@ def getsize(str):
 
 
 def resize_image(img, size):
-    return img.convert('RGBA').resize(size, resample=Image.HAMMING)
+    return img.convert('RGB').resize(size, resample=Image.HAMMING)
 
 try:
     with Image.open(imgpath) as originimg:
