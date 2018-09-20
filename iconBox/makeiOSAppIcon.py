@@ -11,15 +11,21 @@ if len(sysargs) <= 1:
     print('ERROR!!!!IMAGE NOT FOUND! need image file path')
     exit(-1)
 
-t = ('20@2x',
+t = (
+     '20@1x',
+     '20@2x',
      '20@3x',
+     '29@1x',
      '29@2x',
      '29@3x',
-     '20@3x',
+     '40@1x',
      '40@2x',
      '40@3x',
      '60@2x',
      '60@3x',
+     '76@1x',
+     '76@2x',
+     '83.5@2x',
      '1024@1x',
      )
 
@@ -28,8 +34,8 @@ dirpath = os.path.join(os.path.split(imgpath)[0], 'pyappicons')
 
 # 自动生成ios所需要的图片
 def getsize(str):
-    m = re.match(r'^(\d*)@(\d*)x$', str)
-    b = int(m.group(1)) * int(m.group(2))
+    m = re.match(r'^([\d.]*)@(\d*)x$', str)
+    b = int(float(m.group(1)) * float(m.group(2)))
     return b, b
 
 
